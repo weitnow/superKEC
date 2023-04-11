@@ -57,5 +57,8 @@ class PlayState extends FlxState
 
 		if (FlxG.keys.pressed.D)
 			player.velocity.x += 80;
+
+		if (FlxG.keys.justPressed.C && player.isTouching(FLOOR))
+			player.velocity.y = -200;
 	}
 }
