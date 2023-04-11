@@ -33,9 +33,7 @@ class PlayState extends FlxState
 		map.loadMapFromArray(mapData, 20, 12, AssetPaths.tiles__png, 16, 16);
 		add(map);
 
-		player = new FlxSprite(64, 0);
-		player.makeGraphic(16, 16, FlxColor.RED);
-		player.acceleration.y = 420;
+		player = new Player(64, 0);
 		add(player);
 
 		super.create();
@@ -45,20 +43,5 @@ class PlayState extends FlxState
 	{
 		super.update(elapsed);
 		FlxG.collide(map, player);
-		movePlayer();
-	}
-
-	private function movePlayer():Void
-	{
-		player.velocity.x = 0;
-
-		if (FlxG.keys.pressed.A)
-			player.velocity.x -= 80;
-
-		if (FlxG.keys.pressed.D)
-			player.velocity.x += 80;
-
-		if (FlxG.keys.justPressed.C && player.isTouching(FLOOR))
-			player.velocity.y = -200;
 	}
 }
