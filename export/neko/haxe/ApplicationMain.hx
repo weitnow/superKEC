@@ -35,7 +35,7 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "4";
+		app.meta["build"] = "5";
 		app.meta["company"] = "WeitnowGames";
 		app.meta["file"] = "runner";
 		app.meta["name"] = "Super KEC";
