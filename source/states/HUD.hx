@@ -6,6 +6,7 @@ import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
 import flixel.input.actions.FlxAction.FlxActionAnalog;
 import flixel.math.FlxPoint;
 import flixel.text.FlxText;
+import flixel.util.FlxColor;
 
 class HUD extends FlxTypedSpriteGroup<FlxSprite>
 {
@@ -31,6 +32,11 @@ class HUD extends FlxTypedSpriteGroup<FlxSprite>
 		add(_textCoin);
 		add(_textWorld);
 		add(_textTime);
+
+		forEachOfType(FlxText, function(member)
+		{
+			member.setFormat(AssetPaths.pixel_font__ttf, 8, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, 0xff005784);
+		});
 
 		_textScore.alignment = FlxTextAlign.LEFT;
 		_textCoin.alignment = FlxTextAlign.CENTER;
