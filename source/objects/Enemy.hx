@@ -2,6 +2,7 @@ package objects;
 
 import flixel.FlxObject;
 import flixel.FlxSprite;
+import flixel.util.FlxTimer;
 
 class Enemy extends FlxSprite
 {
@@ -56,5 +57,37 @@ class Enemy extends FlxSprite
 	private function move()
 	{
 		velocity.x = _direction * WALK_SPEED;
+	}
+
+	public function interact(player:Player)
+	{
+		if (!alive)
+			return;
+
+		FlxObject.separateY(this, player);
+
+		if ((player.velocity.y > 0) && (isTouching(UP)))
+		{
+			kill();
+			player.jump();
+		}
+		else
+			player.kill();
+	}
+
+	override public function kill()
+	{
+		alive = false;
+		Reg.score += SCORE_AMOUNT;
+
+		velocity.x = 0;
+		acceleration.x = 0;
+		animation.play("dead");
+
+		new FlxTimer().start(1.0, function(_)
+		{
+			exists = false;
+			visible = false;
+		}, 1);
 	}
 }

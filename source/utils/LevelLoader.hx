@@ -12,6 +12,7 @@ import flixel.group.FlxGroup;
 import flixel.math.FlxPoint;
 import flixel.tile.FlxTilemap;
 import objects.Coin;
+import objects.Enemy;
 import states.PlayState;
 
 class LevelLoader
@@ -36,6 +37,10 @@ class LevelLoader
 		// adding coins
 		for (coin in getLevelObjects(tiledMap, "coins"))
 			state.items.add(new Coin(coin.x, coin.y - 16));
+
+		// adding enemies
+		for (enemy in getLevelObjects(tiledMap, "enemies"))
+			state.enemies.add(new Enemy(enemy.x, enemy.y - 16));
 
 		// adding player
 		var playerPos:TiledObject = getLevelObjects(tiledMap, "player")[0];

@@ -49,10 +49,19 @@ class PlayState extends FlxState
 
 		FlxG.collide(map, player);
 		FlxG.overlap(items, player, collideItems);
+		FlxG.overlap(enemies, player, collideEnemies);
+
+		FlxG.collide(map, enemies);
+		FlxG.collide(enemies, enemies);
 	}
 
 	function collideItems(coin:Coin, player:Player):Void
 	{
 		coin.collect();
+	}
+
+	function collideEnemies(enemy:Enemy, player:Player):Void
+	{
+		enemy.interact(player);
 	}
 }
