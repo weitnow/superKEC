@@ -1,5 +1,6 @@
 package states;
 
+import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
@@ -36,7 +37,7 @@ class HUD extends FlxTypedSpriteGroup<FlxSprite>
 		forEachOfType(FlxText, function(member)
 		{
 			member.setFormat(AssetPaths.pixel_font__ttf, 8, FlxColor.WHITE, FlxTextAlign.LEFT, FlxTextBorderStyle.OUTLINE, 0xff005784);
-		});
+		}, false);
 
 		_textScore.alignment = FlxTextAlign.LEFT;
 		_textCoin.alignment = FlxTextAlign.CENTER;

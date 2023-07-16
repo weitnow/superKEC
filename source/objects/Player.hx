@@ -44,6 +44,11 @@ class Player extends FlxSprite
 		super.update(elapsed);
 	}
 
+	public function jump()
+	{
+		velocity.y = JUMP_FORCE;
+	}
+
 	private function move()
 	{
 		acceleration.x = 0;
@@ -64,14 +69,14 @@ class Player extends FlxSprite
 		if (velocity.y == 0)
 		{
 			if (FlxG.keys.justPressed.W && isTouching(FLOOR))
-				velocity.y = JUMP_FORCE;
+				jump();
 
 			if (FlxG.keys.pressed.H)
 				maxVelocity.x = RUN_SPEED;
 			else
 				maxVelocity.x = WALK_SPEED;
 		}
-
+		// if release jump key (w) then reduce velocity.y
 		if ((velocity.y < 0) && (FlxG.keys.justReleased.W))
 			velocity.y = velocity.y * 0.5;
 

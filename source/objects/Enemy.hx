@@ -40,7 +40,7 @@ class Enemy extends FlxSprite
 		{
 			move();
 
-			if (justTouched(FlxObject.WALL))
+			if (justTouched(WALL))
 				flipDirection();
 		}
 

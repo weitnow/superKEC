@@ -23,7 +23,7 @@
   <object id="10" gid="7" x="496" y="176" width="16" height="16"/>
   <object id="11" gid="7" x="496" y="208" width="16" height="16"/>
  </objectgroup>
- <objectgroup id="3" name="player" offsetx="-12.5" offsety="6.5">
-  <object id="1" gid="6" x="77.5" y="197.5" width="16" height="16"/>
+ <objectgroup id="3" name="player">
+  <object id="1" gid="6" x="48.1667" y="191.833" width="16" height="16"/>
  </objectgroup>
 </map>

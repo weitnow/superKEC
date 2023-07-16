@@ -20,7 +20,7 @@ class ApplicationMain
 
 		#if (js && html5)
 		#if (munit || utest)
-		lime.system.System.embed("runner", null, 640, 480);
+		lime.system.System.embed("runner", null, 640, 360);
 		#end
 		#else
 		create(null);
@@ -35,10 +35,10 @@ class ApplicationMain
 		ManifestResources.init(config);
 		#end
 
-		app.meta["build"] = "3";
-		app.meta["company"] = "HaxeFlixel";
+		app.meta["build"] = "8";
+		app.meta["company"] = "WeitnowGames";
 		app.meta["file"] = "runner";
-		app.meta["name"] = "runner";
+		app.meta["name"] = "Super KEC";
 		app.meta["packageName"] = "com.example.myapp";
 		app.meta["version"] = "0.0.1";
 
@@ -54,13 +54,13 @@ class ApplicationMain
 			element: null,
 			frameRate: 60,
 			#if !web fullscreen: false, #end
-			height: 480,
+			height: 360,
 			hidden: #if munit true #else false #end,
 			maximized: false,
 			minimized: false,
 			parameters: {},
 			resizable: false,
-			title: "runner",
+			title: "Super KEC",
 			width: 640,
 			x: null,
 			y: null,

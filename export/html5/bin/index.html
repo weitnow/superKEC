@@ -4,7 +4,7 @@
 	
 	<meta charset="utf-8">
 	
-	<title>runner</title>
+	<title>Super KEC</title>
 	
 	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -25,7 +25,13 @@
 	
 	<style>
 		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-		#openfl-content { background: #000000; width: 640px; height: 480px; }
+		#openfl-content { background: #000000; width: 640px; height: 360px; }
+		@font-face {
+			font-family: 'Early GameBoy Regular';
+			src: url('assets/data/pixel-font.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
 		@font-face {
 			font-family: 'Nokia Cellphone FC Small';
 			src: url('flixel/fonts/nokiafc22.ttf') format('truetype');
@@ -49,7 +55,7 @@
 	<div id="openfl-content"></div>
 	
 	<script type="text/javascript">
-		lime.embed ("runner", "openfl-content", 640, 480, { parameters: {} });
+		lime.embed ("runner", "openfl-content", 640, 360, { parameters: {} });
 	</script>
 	
 </body>
